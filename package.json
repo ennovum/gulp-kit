@@ -1,7 +1,7 @@
 {
   "name": "ennovum-gulp-kit",
   "author": "ennovum",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/ennovum/gulp-kit.git",
   "license": "MIT",
   "main": "index.js",

@@ -12,5 +12,6 @@ module.exports = {
     compressCSS: require('./tasks/compress-css.js'),
     imagemin: require('./tasks/imagemin.js'),
     manifest: require('./tasks/manifest.js'),
-    jshint: require('./tasks/jshint.js')
+    jshint: require('./tasks/jshint.js'),
+    exec: require('./tasks/exec.js')
 };
