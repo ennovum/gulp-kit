@@ -8,6 +8,7 @@ module.exports = {
     watch: require('./tasks/watch.js'),
     clean: require('./tasks/clean.js'),
     copy: require('./tasks/copy.js'),
+    replace: require('./tasks/replace.js'),
     compressJS: require('./tasks/compress-js.js'),
     compressCSS: require('./tasks/compress-css.js'),
     imagemin: require('./tasks/imagemin.js'),
