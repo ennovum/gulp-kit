@@ -6,17 +6,19 @@ var path = require('path');
 var map = require('map-stream');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var opath = require('object-path');
 
-function browserifyTask(src, dest, params) {
-    var transforms = params && params.transforms || [];
+var pkg = require('./../package.json');
+var transform = opath.get(pkg, 'browserify.transform', []);
 
+function browserifyTask(src, dest) {
     return function () {
         return gulp.src(src)
             .pipe(map(function (file, done) {
                 var bundler = browserify(file.path, {paths: ['./node_modules/', './browser_modules/']});
 
-                for (var i = 0, l = transforms.length; i < l; i++) {
-                    bundler.transform(transforms[i]);
+                for (var i = 0, l = transform.length; i < l; i++) {
+                    bundler.transform(transform[i]);
                 }
 
                 function rebundle() {
